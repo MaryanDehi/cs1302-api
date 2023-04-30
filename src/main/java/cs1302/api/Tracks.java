@@ -10,5 +10,5 @@ public class Tracks {
     private float offset;
     private String previous;
     private float total;
-    ArrayList < Object > items = new ArrayList < Object > ();
+    ArrayList <Track> items = new ArrayList <> ();
 } // Tracks

@@ -4,11 +4,11 @@ import java.util.*;
 
 /** Album info. */
 public class Album {
-    private String href;
-    private String id;
+    String href;
+    String id;
     ArrayList <SpotImage> images = new ArrayList <> ();
-    private String name;
+    String name;
     ArrayList <String> genres = new ArrayList <> ();
-    private String label;
-    private float popularity;
+    String label;
+    float popularity;
 } // Album

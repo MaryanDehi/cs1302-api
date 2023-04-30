@@ -4,11 +4,11 @@ import java.util.*;
 
 /** Artists from search.*/
 public class Artists {
-    private String href;
-    private float limit;
-    private String next;
-    private float offset;
-    private String previous;
-    private float total;
+    String href;
+    float limit;
+    String next;
+    float offset;
+    String previous;
+    float total;
     ArrayList <Artist> items = new ArrayList <> ();
 } // Artists
