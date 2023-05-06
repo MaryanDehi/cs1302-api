@@ -10,7 +10,9 @@ Markdown is transformed into nice looking HTML.
 This app allows users to search for tracks, artists or albums from Spotify through the Spotify API.
 This app allows users to search for tracks, artists or albums from Spotify through the Spotify API. Then they can get additional information
 about a result(artist, album or track) from the iTunes API.
+
 Spotify API: https://developer.spotify.com/documentation/web-api
+
 iTunes API: https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html
 
 How the iTunes API knows what information to bring back is because when the user clicks on the more info button next to a result of interest,
@@ -28,7 +30,9 @@ Repository: https://github.com/HeartyFeels/cs1302-api.git
 > on this project?
 
 I have learned how to use accessTokens and what Oauth2 is. I had to overcome the obstacle of requesting a refresh token to use the Spotify API.
+
 Spotify Authorization Process: https://developer.spotify.com/documentation/web-api/concepts/authorization
+
 I also learned how to use a Tableview and add a button to its column, which was much more complex than I thought.
 
 ## Part 3: Retrospect
