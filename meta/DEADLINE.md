@@ -7,10 +7,7 @@ Markdown is transformed into nice looking HTML.
 
 ## Part 1: App Description
 
-> Please provide a friendly description of your app, including the
-> the primary functions available to users of the app. Be sure to
-> describe exactly what APIs you are using and how they are connected
-> in a meaningful way.This app allows users to search for tracks, artists or albums from Spotify through the Spotify API.
+This app allows users to search for tracks, artists or albums from Spotify through the Spotify API.
 This app allows users to search for tracks, artists or albums from Spotify through the Spotify API. Then they can get additional information
 about a result(artist, album or track) from the iTunes API.
 Spotify API: https://developer.spotify.com/documentation/web-api
