@@ -4,11 +4,10 @@ import java.util.*;
 
 /** Tracks returned by search. */
 public class Tracks {
-    private String href;
-    private float limit;
-    private String next;
-    private float offset;
-    private String previous;
-    private float total;
+    String href;
+    float limit;
+    String next;
+    String previous;
+    int total;
     ArrayList <Track> items = new ArrayList <> ();
 } // Tracks

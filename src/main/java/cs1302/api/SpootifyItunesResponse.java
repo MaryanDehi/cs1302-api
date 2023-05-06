@@ -6,7 +6,7 @@ package cs1302.api;
  * project's starter code, and the instance variables are intentionally set
  * to package private visibility.
  */
-public class ItunesResponse {
+public class SpootifyItunesResponse {
     int resultCount;
-    ItunesResult[] results;
+    SpootifyItunesResult[] results;
 } // ItunesResponse

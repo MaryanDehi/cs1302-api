@@ -7,8 +7,7 @@ public class Albums {
     String href;
     float limit;
     String next;
-    float offset;
     String previous;
-    float total;
+    int total;
     ArrayList <Album> items = new ArrayList <Album> ();
 } // Albums
