@@ -85,12 +85,15 @@ public class ApiApp extends Application {
     private TextField textField;
     private Button searchButton;
     private Label spotifyLabel;
+    private Label itunesLabel;
+    private Label itunesLabelAlbum;
 
     /** Scene that shows extra info of a selected item. */
     private Scene albumArtistScene;
     private Scene songInfoScene;
     private HBox root;
     private VBox vbox;
+    private HBox songButtonLabel;
 
     /** Info Scene elements. */
     private BorderPane songBorderPane;
@@ -114,7 +117,7 @@ public class ApiApp extends Application {
     private ObservableList<CustomResult>resultList;
 
     /**
-     * Constructs a {@code ApiApp} object}.
+     * Constructs a {@code ApiApp} object.
      */
     public ApiApp() {
         this.stage = null;
@@ -147,11 +150,14 @@ public class ApiApp extends Application {
         this.tableBackButton.setOnAction(event -> {
             switchToMainScene();
         });
-
         this.instructionLabel = new Label("Type in a term,"
             + " select a media type, then click the button.");
         this.spotifyLabel =  new Label("Results provided by Spotify Search API. ");
+        this.itunesLabel = new Label("Result provided by iTunes API");
+        this.itunesLabelAlbum = new Label("Result provided by iTunes API");
         this.searchLabel = new Label("Search: ");
+        this.songButtonLabel = new HBox(8);
+
         this.searchArea = new HBox();
         this.textField = new TextField("the blonde");
         this.searchButton = new Button("Search");
@@ -169,13 +175,15 @@ public class ApiApp extends Application {
         actionCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         Callback<TableColumn<CustomResult, String>, TableCell<CustomResult, String>> cellFactory =
             createCellFactory();
-
         actionCol.setCellFactory(cellFactory);
         HBox.setHgrow(vbox,  Priority.ALWAYS);
         HBox.setHgrow(textField, Priority.ALWAYS);
     } // ApiApp
 
-    /** {@inheritDoc} */
+    /**
+     * Initializes the scenes layouts.
+     * {@inheritDoc}
+     */
     @Override
     public void init() {
         try {
@@ -185,14 +193,16 @@ public class ApiApp extends Application {
             System.err.println("fail to get auth token:" + e.getMessage());
             System.exit(0);
         } // catch
-        albumArtistRoot.getChildren().addAll(infoTable, this.tableBackButton);
+        albumArtistRoot.getChildren().addAll(itunesLabelAlbum, infoTable, this.tableBackButton);
 
+        songButtonLabel.getChildren().addAll(itunesLabel, backButton);
         songBorderPane.setTop(titleText);
+        songBorderPane.setMargin(titleText, new Insets(30,12,30,12));
         songBorderPane.setCenter(infoImage);
-        songBorderPane.setBottom(backButton);
+        songBorderPane.setBottom(songButtonLabel);
         songBorderPane.setAlignment(titleText, Pos.CENTER);
-        songBorderPane.setAlignment(backButton, Pos.CENTER);
-
+        songBorderPane.setAlignment(songButtonLabel, Pos.CENTER);
+        songBorderPane.setMargin(songButtonLabel, new Insets(12,12,30,12));
         root.getChildren().addAll(vbox);
         vbox.getChildren().addAll(searchArea,instructionLabel, table, labelHBox);
 
@@ -219,7 +229,10 @@ public class ApiApp extends Application {
         searchButton.setOnAction(mouseClickHandler);
     } // init
 
-    /** {@inheritDoc} */
+    /**
+     * Initializes the stage. Is the main entry point to Application.
+     * {@inheritDoc}
+     */
     @Override
     public void start(Stage stage) {
         this.stage = stage;
@@ -228,13 +241,16 @@ public class ApiApp extends Application {
         this.songInfoScene = new Scene(this.songBorderPane, 500, 500);
         this.albumArtistScene = new Scene(this.albumArtistRoot, 500, 500);
         this.stage.setOnCloseRequest(event -> Platform.exit());
-        this.stage.setTitle("Spootify App");
+        this.stage.setTitle("SpootyTunes App");
         this.stage.setScene(this.scene);
         this.stage.show();
         Platform.runLater(() -> this.stage.setResizable(false));
     } // start
 
-    /** {@inheritDoc} */
+    /**
+     * Is called when application should stop.
+     * {@inheritDoc}
+     */
     @Override
     public void stop() {
         System.out.println("Stop method called.");

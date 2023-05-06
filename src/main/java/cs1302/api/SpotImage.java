@@ -1,6 +1,6 @@
 package cs1302.api;
 
-/** image info. */
+/** Image info from Spotify API object. */
 public class SpotImage {
     String url;
 } // SpotImage

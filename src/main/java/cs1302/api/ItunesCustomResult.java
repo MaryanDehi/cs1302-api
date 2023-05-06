@@ -3,7 +3,7 @@ package cs1302.api;
 import javafx.scene.image.*;
 import javafx.beans.property.*;
 
-/** Respresents the information protrayed on the more Info Scene. */
+/** Respresents the information portrayed on the more Info Scene. */
 public class ItunesCustomResult {
     ImageView image;
     SimpleStringProperty artistName;

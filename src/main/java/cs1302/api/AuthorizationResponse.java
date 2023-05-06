@@ -2,7 +2,7 @@ package cs1302.api;
 
 import com.google.gson.annotations.*;
 
-/** Represents response from authorization endpoint.*/
+/** Represents response from Spotify API authorization endpoint.*/
 public class AuthorizationResponse {
     @SerializedName("access_token")
     private String accessToken;
@@ -44,7 +44,7 @@ public class AuthorizationResponse {
 
     /**
      * Sets access token.
-     * @param accessToken
+     * @param accessToken sets access token to this.
      */
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
@@ -52,7 +52,7 @@ public class AuthorizationResponse {
 
     /**
      * Sets the token type.
-     * @param tokenType
+     * @param tokenType sets token type to this.
      */
     public void setTokenType(String tokenType) {
         this.tokenType = tokenType;
@@ -60,7 +60,7 @@ public class AuthorizationResponse {
 
     /**
      * Sets the exiration time limit.
-     * @param expiresIn
+     * @param expiresIn sets expiration window.
      */
     public void setExpiresIn(float expiresIn) {
         this.expiresIn = expiresIn;

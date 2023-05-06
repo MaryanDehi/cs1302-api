@@ -2,16 +2,16 @@ package cs1302.api;
 
 import java.util.*;
 
-/** Track info.*/
+/** Track info. This is used by Gson to create an object from the JSON response body.*/
 public class Track extends SuperItem {
     Album album;
-    ArrayList <Artist> artists = new ArrayList <> ();
-    // String href;
-    // String id;
-    // String name;
-    // float popularity;
-    // String uri;
+    List <Artist> artists = new ArrayList <> ();
 
+    /**
+     * Gets image url specific to track object.
+     * @return String if no image is found then {@code ApiApp.DEFAULT_IMG} is returned.
+     * {@inheritDoc}
+     */
     @Override
     public String getImageUrl() {
         String img = "";

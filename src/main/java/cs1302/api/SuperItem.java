@@ -1,7 +1,7 @@
 package cs1302.api;
 
 /**
- * Superficial class that contains shared attributes of the ARtist, Album and Track class.
+ * Super class that contains shared attributes of the Artist, Album and Track class.
  */
 public abstract class SuperItem {
     String href;

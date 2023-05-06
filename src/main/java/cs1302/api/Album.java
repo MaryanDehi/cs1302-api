@@ -2,16 +2,17 @@ package cs1302.api;
 
 import java.util.*;
 
-/** Album info. */
+/** Album info. This is used by Gson to create an object from the JSON response body. */
 public class Album extends SuperItem {
-    // String href;
-    // String id;
-    ArrayList <SpotImage> images = new ArrayList <> ();
-//    String name;
-    ArrayList <String> genres = new ArrayList <> ();
-    String label;
-    //  float popularity;
 
+    List <SpotImage> images = new ArrayList <> ();
+    String label;
+
+    /**
+     * Gets image url specific to album object.
+     * @return String if no image is found then {@code ApiApp.DEFAULT_IMG} is returned.
+     * {@inheritDoc}
+     */
     @Override
     public String getImageUrl() {
         String img = "";
